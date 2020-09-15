@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.k2jstudio.uvccam"
+        android:versionCode="1" android:versionName="1.0">
+
+    <service android:name="com.k2jstudio.uvccam.UVCcamManager"/>
+
+    <uses-sdk android:targetSdkVersion="17" android:minSdkVersion="9"></uses-sdk>
+</manifest>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="UVCcamPreview">
+        <attr name="camera_device" format="string" />
+        <attr name="face_detect" format="boolean" />
+	</declare-styleable>
+</resources>

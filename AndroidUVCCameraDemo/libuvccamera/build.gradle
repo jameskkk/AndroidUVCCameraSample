@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+import org.apache.tools.ant.taskdefs.condition.Os
+
+android {
+	ndkVersion '21.3.6528147'
+    compileSdkVersion 30
+    buildToolsVersion '30.0.2'
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+
+		splits {
+			abi {
+				reset()
+				include "x86", "armeabi-v7a", "armeabi-v8a", "x86_64"
+			}
+		}
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+	sourceSets {
+		main {
+			jniLibs.srcDir 'src/main/libs'
+			jni.srcDirs = []
+		}
+	}
+}
+
+dependencies {
+}
+
+tasks.withType(JavaCompile) {
+	compileTask -> compileTask.dependsOn ndkBuild
+}
+
+task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
+	println('executing ndkBuild')
+//	def ndkBuildingDir = project.plugins.findPlugin('com.android.library').sdkHandler.getNdkFolder().absolutePath
+	def ndkBuildingDir = android.ndkDirectory
+	def ndkBuildingPath = ndkBuildingDir
+	if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+		ndkBuildingPath = "$ndkBuildingDir\\ndk-build.cmd"
+	} else {
+		ndkBuildingPath = "$ndkBuildingDir/ndk-build"
+	}
+	println("NDKBuildingPath: $ndkBuildingPath")
+	commandLine ndkBuildingPath, '-j8', '-C', file('src/main').absolutePath
+}
