@@ -5,7 +5,15 @@ static def releaseTime() {
 }
 
 android {
-//    ndkVersion '21.3.6528147'
+    signingConfigs {
+        JohnAndroidSign {
+            storeFile file('D:\\JohnAndroidSign.keystore')
+            storePassword 'fuzzy601'
+            keyAlias 'John'
+            keyPassword 'fuzzy601'
+        }
+    }
+    ndkVersion '21.3.6528147'
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
