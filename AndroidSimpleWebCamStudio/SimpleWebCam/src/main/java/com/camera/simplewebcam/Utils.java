@@ -11,6 +11,7 @@ import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Objects;
 
 /**
  * Created by chase on 3/23/15.
@@ -37,7 +38,7 @@ public class Utils {
         }
 
         @Override
-        protected Boolean doInBackground(String... urls) {
+        protected Boolean doInBackground(String[] urls) {
 //            HttpClient httpClient = new DefaultHttpClient();
 //            try {
 //                Log.d(TAG, "SENDING callback request " + urls[0]);
@@ -56,13 +57,13 @@ public class Utils {
                 URL url = new URL(urls[0]);
                 urlConnection = (HttpURLConnection) url.openConnection();
                 int responseCode = urlConnection.getResponseCode();
-                Log.i(TAG, "ResponseCode = " + responseCode.toString());
+                Log.i(TAG, "ResponseCode = " + responseCode);
                 InputStream in = new BufferedInputStream(urlConnection.getInputStream());
                 Log.i(TAG, in.toString());
                 in.close();
                 return true;
             } catch (Exception ex) {
-                Log.e(TAG, ex.getMessage());
+                Log.e(TAG, Objects.requireNonNull(ex.getMessage()));
             } finally {
                 if (urlConnection != null) {
                     urlConnection.disconnect();
