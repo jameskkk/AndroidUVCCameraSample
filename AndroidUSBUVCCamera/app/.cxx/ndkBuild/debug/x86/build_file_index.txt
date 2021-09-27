@@ -1,0 +1,2 @@
+D:\John_Projects\Github\AndroidUVCCameraSamples\AndroidUSBUVCCamera\app\src\main\jni\Android.mk
+D:\John_Projects\Github\AndroidUVCCameraSamples\AndroidUSBUVCCamera\app\src\main\jni\Application.mk

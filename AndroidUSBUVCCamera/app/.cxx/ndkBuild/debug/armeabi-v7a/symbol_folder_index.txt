@@ -1,0 +1,1 @@
+D:\John_Projects\Github\AndroidUVCCameraSamples\AndroidUSBUVCCamera\app\build\intermediates\ndkBuild\debug\obj\local\armeabi-v7a

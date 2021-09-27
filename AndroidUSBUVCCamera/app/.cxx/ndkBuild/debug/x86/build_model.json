@@ -1,0 +1,131 @@
+{
+  "abi": "X86",
+  "info": {
+    "abi": "X86",
+    "bitness": 32,
+    "deprecated": false,
+    "default": true
+  },
+  "originalCxxBuildFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\.cxx\\ndkBuild\\debug\\x86",
+  "cxxBuildFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\.cxx\\ndkBuild\\debug\\x86",
+  "abiPlatformVersion": 18,
+  "variant": {
+    "buildSystemArgumentList": [],
+    "cFlagsList": [],
+    "cppFlagsList": [],
+    "variantName": "debug",
+    "objFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\build\\intermediates\\ndkBuild\\debug\\obj\\local",
+    "soFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\build\\intermediates\\ndkBuild\\debug\\lib",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "X86"
+    ],
+    "buildTargetSet": [],
+    "implicitBuildTargetSet": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "module": {
+      "cxxFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\.cxx",
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\build\\intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app",
+      "moduleBuildFile": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\build.gradle",
+      "makeFile": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\src\\main\\jni\\Android.mk",
+      "buildSystem": "NDK_BUILD",
+      "ndkFolder": "D:\\SDK\\AndroidStudioSDK\\Sdk\\ndk\\21.3.6528147",
+      "ndkVersion": "21.3.6528147",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultStl": "SYSTEM",
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 30,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30
+        }
+      },
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "originalCmakeToolchainFile": "D:\\SDK\\AndroidStudioSDK\\Sdk\\ndk\\21.3.6528147\\build\\cmake\\android.toolchain.cmake",
+      "cmakeToolchainFile": "D:\\SDK\\AndroidStudioSDK\\Sdk\\ndk\\21.3.6528147\\build\\cmake\\android.toolchain.cmake",
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "D:\\SDK\\AndroidStudioSDK\\Sdk\\ndk\\21.3.6528147\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "D:\\SDK\\AndroidStudioSDK\\Sdk\\ndk\\21.3.6528147\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "D:\\SDK\\AndroidStudioSDK\\Sdk\\ndk\\21.3.6528147\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "D:\\SDK\\AndroidStudioSDK\\Sdk\\ndk\\21.3.6528147\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      },
+      "project": {
+        "rootBuildGradleFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera",
+        "cxxFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\.cxx",
+        "compilerSettingsCacheFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\.cxx",
+        "sdkFolder": "D:\\SDK\\AndroidStudioSDK\\Sdk",
+        "isNativeCompilerSettingsCacheEnabled": false,
+        "isBuildOnlyTargetAbiEnabled": true,
+        "ideBuildTargetAbi": "x86",
+        "isCmakeBuildCohabitationEnabled": false,
+        "isPrefabEnabled": false,
+        "isV2NativeModelEnabled": true
+      },
+      "nativeBuildOutputLevel": "QUIET"
+    },
+    "prefabDirectory": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\.cxx\\ndkBuild\\debug\\prefab"
+  },
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "prefabFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\.cxx\\ndkBuild\\debug\\prefab\\x86"
+}
