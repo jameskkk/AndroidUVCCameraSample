@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_takepic"
+        android:icon="@mipmap/capture"
+        android:title="@string/text_taking_photos"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_recording"
+        android:icon="@mipmap/recorder"
+        android:title="@string/text_recording"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_focus"
+        android:icon="@mipmap/focus"
+        android:title="@string/text_camera_focus"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_resolution"
+        android:icon="@mipmap/resolution"
+        android:title="@string/text_resolution"
+        app:showAsAction="never" />
+</menu>

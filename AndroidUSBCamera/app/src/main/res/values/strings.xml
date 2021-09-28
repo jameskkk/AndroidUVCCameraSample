@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NKGUSBCamera</string>
+    <string name="app_title">NKG USB Camera</string>
+    <string name="msg_cancel_operate">取消操作</string>
+    <string name="text_author">Author: John Chen</string>
+    <string name="text_email">Email: john_chen@kinpo.com.tw</string>
+    <string name="text_last_modify">last modify 2021.09</string>
+    <string name="text_taking_photos">Taking Photos (拍照)</string>
+    <string name="text_recording">Recording (錄影)</string>
+    <string name="text_camera_focus">Camera Focus (對焦)</string>
+    <string name="text_resolution">Resolution (解析度)</string>
+</resources>
