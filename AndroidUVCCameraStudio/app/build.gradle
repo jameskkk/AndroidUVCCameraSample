@@ -7,7 +7,7 @@ static def releaseTime() {
 android {
     signingConfigs {
         JohnAndroidSign {
-            storeFile file('D:\\JohnAndroidSign.keystore')
+            storeFile file('D:\\John_Projects\\JohnAndroidSign.keystore')
             storePassword 'fuzzy601'
             keyAlias 'John'
             keyPassword 'fuzzy601'
@@ -83,7 +83,6 @@ android {
         }
     }
 
-
     //自定義安裝包名稱
 //    applicationVariants.all { variant ->
 //        variant.outputs.each { output ->
@@ -98,10 +97,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-
 }
-
-
 
 dependencies {
 //    implementation fileTree(include: ['*.jar'], dir: 'libs')
