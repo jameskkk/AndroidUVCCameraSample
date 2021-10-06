@@ -1,4 +1,4 @@
-package com.jiangdg.usbcamera.utils;
+package com.calcomp.usbcamera.utils;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -9,8 +9,8 @@ import android.os.Environment;
 import android.os.Looper;
 import android.widget.Toast;
 
-import com.jiangdg.usbcamera.UVCCameraHelper;
-import com.jiangdg.usbcamera.application.MyApplication;
+import com.calcomp.usbcamera.UVCCameraHelper;
+import com.calcomp.usbcamera.application.MyApplication;
 
 import java.io.File;
 import java.io.FileNotFoundException;

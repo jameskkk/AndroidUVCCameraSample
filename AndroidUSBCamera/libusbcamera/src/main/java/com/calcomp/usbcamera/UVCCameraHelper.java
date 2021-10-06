@@ -1,11 +1,11 @@
-package com.jiangdg.usbcamera;
+package com.calcomp.usbcamera;
 
 import android.app.Activity;
 import android.graphics.SurfaceTexture;
 import android.hardware.usb.UsbDevice;
 import android.os.Environment;
 
-import com.jiangdg.libusbcamera.R;
+import com.calcomp.libusbcamera.R;
 import org.easydarwin.sw.TxtOverlay;
 import com.serenegiant.usb.DeviceFilter;
 import com.serenegiant.usb.Size;
@@ -23,7 +23,7 @@ import java.util.Objects;
 
 /** UVCCamera Helper class
  *
- * Created by jiangdongguo on 2017/9/30.
+ * Created by John on 2021/09/30.
  */
 
 public class UVCCameraHelper {

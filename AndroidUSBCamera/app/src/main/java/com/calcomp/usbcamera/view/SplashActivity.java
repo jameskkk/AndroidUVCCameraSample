@@ -1,4 +1,4 @@
-package com.jiangdg.usbcamera.view;
+package com.calcomp.usbcamera.view;
 
 import android.Manifest;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.jiangdg.usbcamera.R;
+import com.calcomp.usbcamera.R;
 
 import java.util.ArrayList;
 import java.util.Collection;

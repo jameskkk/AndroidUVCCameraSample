@@ -1,4 +1,4 @@
-package com.jiangdg.usbcamera.view;
+package com.calcomp.usbcamera.view;
 
 import android.content.res.Configuration;
 import android.hardware.usb.UsbDevice;
@@ -20,15 +20,15 @@ import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.Toast;
-import com.jiangdg.usbcamera.R;
+import com.calcomp.usbcamera.R;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.jiangdg.usbcamera.UVCCameraHelper;
-import com.jiangdg.usbcamera.application.MyApplication;
-import com.jiangdg.usbcamera.utils.FileUtils;
+import com.calcomp.usbcamera.UVCCameraHelper;
+import com.calcomp.usbcamera.application.MyApplication;
+import com.calcomp.usbcamera.utils.FileUtils;
 import com.serenegiant.usb.CameraDialog;
 import com.serenegiant.usb.Size;
 import com.serenegiant.usb.USBMonitor;

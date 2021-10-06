@@ -1,4 +1,4 @@
-package com.jiangdg.usbcamera.utils;
+package com.calcomp.usbcamera.utils;
 
 import android.os.Environment;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 /**
  *
- * Created by jiangdongguo on 2017/10/18.
+ * Created by John on 2021/10/18.
  */
 
 public class FileUtils {
