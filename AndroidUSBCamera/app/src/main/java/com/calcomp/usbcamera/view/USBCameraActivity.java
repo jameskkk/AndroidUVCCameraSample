@@ -144,7 +144,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
         mCameraHelper.setOnPreviewFrameListener(new AbstractUVCCameraHandler.OnPreViewResultListener() {
             @Override
             public void onPreviewResult(byte[] nv21Yuv) {
-                Log.d(TAG, "onPreviewResult: "+nv21Yuv.length);
+                Log.d(TAG, "onPreviewResult: " + nv21Yuv.length);
             }
         });
     }

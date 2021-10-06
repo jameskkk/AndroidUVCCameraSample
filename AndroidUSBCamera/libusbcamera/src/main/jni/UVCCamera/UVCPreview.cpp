@@ -357,7 +357,7 @@ int UVCPreview::stopPreview() {
 	if (LIKELY(b)) {
 		mIsRunning = false;
 		pthread_cond_signal(&preview_sync);
-        // jiangdg:fix stopview crash
+        // John:fix stopview crash
         // because of capture_thread may null when called do_preview()
 		if (mHasCapturing) {
             pthread_cond_signal(&capture_sync);
@@ -520,7 +520,7 @@ void UVCPreview::do_preview(uvc_stream_ctrl_t *ctrl) {
 	uvc_frame_t *frame_mjpeg = NULL;
 	uvc_error_t result = uvc_start_streaming_bandwidth(
 		mDeviceHandle, ctrl, uvc_preview_frame_callback, (void *)this, requestBandwidth, 0);
-    // jiangdg:fix stopview crash
+    // John:fix stopview crash
     // use mHasCapturing flag confirm capture_thread was be created
     mHasCapturing = false;
 	if (LIKELY(!result)) {

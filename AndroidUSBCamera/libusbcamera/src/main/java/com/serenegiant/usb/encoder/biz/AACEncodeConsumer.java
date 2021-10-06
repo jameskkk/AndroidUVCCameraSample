@@ -25,7 +25,7 @@ import java.util.Date;
 
 /**将PCM编码为AAC
  *
- * Created by jianddongguo on 2017/7/21.
+ * Created by John Chen on 2017/7/21.
  */
 
 public class AACEncodeConsumer extends Thread{

@@ -17,7 +17,7 @@ import java.nio.ByteBuffer;
 
 /**
  * 对YUV视频流进行编码
- * Created by jiangdongguo on 2017/5/6.
+ * Created by John Chen on 2017/5/6.
  */
 
 @SuppressWarnings("deprecation")

@@ -2,7 +2,7 @@ package com.serenegiant.usb.encoder;
 
 /** 录制参数
  *
- * Created by jiangdongguo on 2017/10/19.
+ * Created by John Chen on 2017/10/19.
  */
 
 public class RecordParams {

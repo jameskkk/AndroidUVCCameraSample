@@ -12,7 +12,7 @@ import java.nio.ByteBuffer;
 
 /**Mp4封装混合器
  *
- * Created by jianddongguo on 2017/7/28.
+ * Created by John Chen on 2017/7/28.
  */
 
 public class Mp4MediaMuxer {

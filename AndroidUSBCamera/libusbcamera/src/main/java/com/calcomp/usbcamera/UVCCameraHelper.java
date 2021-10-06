@@ -23,7 +23,7 @@ import java.util.Objects;
 
 /** UVCCamera Helper class
  *
- * Created by John on 2021/09/30.
+ * Created by John Chen on 2021/09/30.
  */
 
 public class UVCCameraHelper {

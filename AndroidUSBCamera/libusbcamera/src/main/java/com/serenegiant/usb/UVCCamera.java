@@ -197,7 +197,7 @@ public class UVCCamera {
 				mCtrlBlock.getBusNum(),
 				mCtrlBlock.getDevNum(),
 				getUSBFSName(mCtrlBlock));
-			sb.append("调用nativeConnect返回值："+result);
+			sb.append("Call nativeConnect return：" + result);
 //			long id_camera, int venderId, int productId, int fileDescriptor, int busNum, int devAddr, String usbfs
 		} catch (final Exception e) {
 			Log.w(TAG, e);

@@ -8,7 +8,6 @@ android {
         targetSdkVersion rootProject.ext.versionTarget
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionNameString
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -26,12 +25,10 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
+    //noinspection GradleDependency
     implementation "androidx.appcompat:appcompat:${androidXVersion}"
 
     implementation 'com.jakewharton:butterknife:10.2.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    androidTestImplementation 'junit:junit:4.12'
-    androidTestImplementation 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
 
     implementation project(':libusbcamera')
