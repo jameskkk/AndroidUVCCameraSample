@@ -256,7 +256,7 @@ int UVCCamera::setPreviewSize(int width, int height, int min_fps, int max_fps, i
 }
 
 /**
-* 设置预览窗口,由底层绘制预览画面
+* 設置預覽窗口, 由底層繪制預覽畫面
 */
 int UVCCamera::setPreviewDisplay(ANativeWindow *preview_window) {
 	ENTER();
@@ -268,7 +268,7 @@ int UVCCamera::setPreviewDisplay(ANativeWindow *preview_window) {
 }
 
 /**
-*设置预览帧回调
+* 設置預覽影像回傳
 */
 int UVCCamera::setFrameCallback(JNIEnv *env, jobject frame_callback_obj, int pixel_format) {
 	ENTER();
