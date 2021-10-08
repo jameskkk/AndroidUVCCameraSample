@@ -1,9 +1,15 @@
 package com.calcomp.usbcamera;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.graphics.SurfaceTexture;
 import android.hardware.usb.UsbDevice;
+import android.os.Build;
 import android.os.Environment;
+import android.util.Log;
+
+import androidx.core.app.ActivityCompat;
 
 import com.calcomp.libusbcamera.R;
 import org.easydarwin.sw.TxtOverlay;
@@ -32,6 +38,7 @@ public class UVCCameraHelper {
     public static final String SUFFIX_JPEG = ".jpg";
     public static final String SUFFIX_MP4 = ".mp4";
     private static final String TAG = "UVCCameraHelper";
+    private static final int REQ_PERMISSION_CAMERA = 18;
     private int previewWidth = 640;
     private int previewHeight = 480;
     public static final int FRAME_FORMAT_YUYV = UVCCamera.FRAME_FORMAT_YUYV;
@@ -216,16 +223,54 @@ public class UVCCameraHelper {
         return mCameraHandler != null ? mCameraHandler.resetValue(flag) : 0;
     }
 
-    public void requestPermission(int index) {
+    public boolean requestPermission(int index) {
+        boolean success = false;
         List<UsbDevice> devList = getUsbDeviceList();
         if (devList == null || devList.size() == 0) {
-            return;
+            return false;
         }
         int count = devList.size();
-        if (index >= count)
+        if (index >= count) {
             new IllegalArgumentException("index illegal,should be < devList.size()");
+        }
         if (mUSBMonitor != null) {
-            mUSBMonitor.requestPermission(getUsbDeviceList().get(index));
+            // 20211008 Add by John, check CAMERA permission
+            int hasPermission= ActivityCompat.checkSelfPermission(this.mActivity, Manifest.permission.CAMERA);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                // Android 9 and later needs CAMERA permission to access UVC devices
+                if (hasPermission == PackageManager.PERMISSION_GRANTED) {
+                    Log.i(TAG, "CAMERA permission was already granted");
+                } else {
+                    requestCameraPermission();
+                }
+            } else {
+                Log.i(TAG, "Building version before Android 9, CAMERA permission: " + hasPermission);
+            }
+
+            success = mUSBMonitor.requestPermission(getUsbDeviceList().get(index));
+        }
+
+        return success;
+    }
+
+    private void requestCameraPermission() {
+        Log.v(TAG, "Call requestCameraPermission()...");
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this.mActivity, Manifest.permission.CAMERA)) {
+            if (this.mActivity != null) {
+                // Request the permission
+                Log.i(TAG, "CAMERA permission request...");
+                ActivityCompat.requestPermissions(
+                    this.mActivity,
+                    new String[]{Manifest.permission.CAMERA},
+                    REQ_PERMISSION_CAMERA);
+            }
+        } else {
+            Log.i(TAG, "CAMERA permission request...");
+            ActivityCompat.requestPermissions(
+                this.mActivity,
+                new String[]{Manifest.permission.CAMERA},
+                REQ_PERMISSION_CAMERA
+			);
         }
     }
 

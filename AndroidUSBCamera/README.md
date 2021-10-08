@@ -78,7 +78,10 @@ private UVCCameraHelper.OnMyDevConnectListener listener = new UVCCameraHelper.On
             if (!isRequest) {
                 isRequest = true;
                 if (mCameraHelper != null) {
-                    mCameraHelper.requestPermission(0);
+                    boolean success = mCameraHelper.requestPermission(0);
+                    if (!success) {
+                        showShortMsg("requestPermission failed!");
+                    }
                 }
             }
         }

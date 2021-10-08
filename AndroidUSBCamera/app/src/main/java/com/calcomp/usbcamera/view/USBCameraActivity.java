@@ -77,7 +77,10 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
             if (!isRequest) {
                 isRequest = true;
                 if (mCameraHelper != null) {
-                    mCameraHelper.requestPermission(0);
+                    boolean success = mCameraHelper.requestPermission(0);
+                    if (!success) {
+                        showShortMsg("requestPermission failed!");
+                    }
                 }
             }
         }
@@ -154,12 +157,18 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
         if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
             Log.i(TAG, "Set ORIENTATION_LANDSCAPE!");
             if (mCameraHelper != null) {
-                mCameraHelper.requestPermission(0);
+                boolean success = mCameraHelper.requestPermission(0);
+                if (!success) {
+                    showShortMsg("requestPermission failed!");
+                }
             }
         } else if (configuration.orientation == Configuration.ORIENTATION_PORTRAIT){
             Log.i(TAG, "Set ORIENTATION_PORTRAIT!");
             if (mCameraHelper != null) {
-                mCameraHelper.requestPermission(0);
+                boolean success = mCameraHelper.requestPermission(0);
+                if (!success) {
+                    showShortMsg("requestPermission failed!");
+                }
             }
         }
 

@@ -42,6 +42,7 @@ import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
+import android.widget.Toast;
 
 import com.serenegiant.utils.BuildCheck;
 import com.serenegiant.utils.HandlerThreadHandler;
@@ -490,24 +491,28 @@ public final class USBMonitor {
 		if (isRegistered()) {
 			if (device != null) {
 				if (mUsbManager.hasPermission(device)) {
+					Log.i(TAG, "App already has permission!");
 					// call onConnect if app already has permission
 					processConnect(device);
 				} else {
 					try {
+						Log.i(TAG, "Call requestPermission()...");
 						// パーミッションがなければ要求する
 						mUsbManager.requestPermission(device, mPermissionIntent);
 					} catch (final Exception e) {
 						// Android5.1.xのGALAXY系でandroid.permission.sec.MDM_APP_MGMTという意味不明の例外生成するみたい
-						Log.w(TAG, e);
+						Log.e(TAG, "requestPermission() exception: " + e.getMessage());
 						processCancel(device);
 						result = true;
 					}
 				}
 			} else {
+				Log.e(TAG, "requestPermission() Device is null!");
 				processCancel(device);
 				result = true;
 			}
 		} else {
+			Log.e(TAG, "Device has been already registered!");
 			processCancel(device);
 			result = true;
 		}
@@ -550,9 +555,13 @@ public final class USBMonitor {
 						if (device != null) {
 							// get permission, call onConnect
 							processConnect(device);
+						} else {
+							Log.e(TAG, "ACTION_USB_PERMISSION device is null!");
 						}
 					} else {
 						// failed to get permission
+						Log.e(TAG, "Failed to get permission!");
+						Toast.makeText(context, "Failed to get permission!", Toast.LENGTH_SHORT).show();
 						processCancel(device);
 					}
 				}
