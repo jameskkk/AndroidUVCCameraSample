@@ -18,7 +18,9 @@
     "soFolder": "D:\\John_Projects\\Github\\AndroidUVCCameraSamples\\AndroidUSBUVCCamera\\app\\build\\intermediates\\ndkBuild\\debug\\lib",
     "isDebuggableEnabled": true,
     "validAbiList": [
-      "X86"
+      "ARMEABI_V7A",
+      "X86",
+      "X86_64"
     ],
     "buildTargetSet": [],
     "implicitBuildTargetSet": [],
@@ -115,7 +117,6 @@
         "sdkFolder": "D:\\SDK\\AndroidStudioSDK\\Sdk",
         "isNativeCompilerSettingsCacheEnabled": false,
         "isBuildOnlyTargetAbiEnabled": true,
-        "ideBuildTargetAbi": "x86",
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false,
         "isV2NativeModelEnabled": true
