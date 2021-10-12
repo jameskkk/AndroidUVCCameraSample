@@ -1,5 +1,6 @@
 package com.calcomp.usbcamera.view;
 
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.hardware.usb.UsbDevice;
 import android.os.Build;
@@ -133,6 +134,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e(TAG, "onCreate()...");
         setContentView(R.layout.activity_usbcamera);
         ButterKnife.bind(this);
         initView();
@@ -153,24 +155,29 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
     }
 
     private void initView() {
-        Configuration configuration = getResources().getConfiguration();
-        if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
-            Log.i(TAG, "Set ORIENTATION_LANDSCAPE!");
-            if (mCameraHelper != null) {
-                boolean success = mCameraHelper.requestPermission(0);
-                if (!success) {
-                    showShortMsg("requestPermission failed!");
-                }
-            }
-        } else if (configuration.orientation == Configuration.ORIENTATION_PORTRAIT){
-            Log.i(TAG, "Set ORIENTATION_PORTRAIT!");
-            if (mCameraHelper != null) {
-                boolean success = mCameraHelper.requestPermission(0);
-                if (!success) {
-                    showShortMsg("requestPermission failed!");
-                }
-            }
-        }
+//        Configuration configuration = getResources().getConfiguration();
+//        if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+//            Log.i(TAG, "Set ORIENTATION_LANDSCAPE!");
+//            if (mCameraHelper != null) {
+//                if (isPreview && mCameraHelper.isCameraOpened()) {
+//                    mCameraHelper.stopPreview();
+//                    isPreview = false;
+//                }
+//
+//                boolean success = mCameraHelper.requestPermission(0);
+//                if (!success) {
+//                    showShortMsg("requestPermission failed!");
+//                }
+//            }
+//        } else if (configuration.orientation == Configuration.ORIENTATION_PORTRAIT){
+//            Log.i(TAG, "Set ORIENTATION_PORTRAIT!");
+//            if (mCameraHelper != null) {
+//                boolean success = mCameraHelper.requestPermission(0);
+//                if (!success) {
+//                    showShortMsg("requestPermission failed!");
+//                }
+//            }
+//        }
 
         setSupportActionBar(mToolbar);
         getSupportActionBar().setIcon(getResources().getDrawable(R.mipmap.ic_launcher));
@@ -180,7 +187,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if(mCameraHelper != null && mCameraHelper.isCameraOpened()) {
-                    mCameraHelper.setModelValue(UVCCameraHelper.MODE_BRIGHTNESS,progress);
+                    mCameraHelper.setModelValue(UVCCameraHelper.MODE_BRIGHTNESS, progress);
                 }
             }
 
@@ -218,6 +225,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
     @Override
     protected void onStart() {
         super.onStart();
+        Log.e(TAG, "onStart()...");
         // step.2 register USB event broadcast
         if (mCameraHelper != null) {
             mCameraHelper.registerUSB();
@@ -227,6 +235,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
     @Override
     protected void onStop() {
         super.onStop();
+        Log.e(TAG, "onStop()...");
         // step.3 unregister USB event broadcast
         if (mCameraHelper != null) {
             mCameraHelper.unregisterUSB();
@@ -378,13 +387,31 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(TAG, "onResume()...");
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
+        Log.e(TAG, "onDestroy()...");
         FileUtils.releaseFile();
         // step.4 release uvc camera resources
         if (mCameraHelper != null) {
             mCameraHelper.release();
         }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        if (newConfig.orientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+        {
+            Log.e(TAG, "onConfigurationChanged(): SCREEN_ORIENTATION_LANDSCAPE");
+        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Log.e(TAG, "onConfigurationChanged(): SCREEN_ORIENTATION_PORTRAIT");
+        }
+        super.onConfigurationChanged(newConfig);
     }
 
     private void showShortMsg(String msg) {
@@ -409,6 +436,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
 
     @Override
     public void onSurfaceCreated(CameraViewInterface view, Surface surface) {
+        Log.e(TAG, "onSurfaceCreated()");
         if (!isPreview && mCameraHelper.isCameraOpened()) {
             mCameraHelper.startPreview(mUVCCameraView);
             isPreview = true;
@@ -417,11 +445,12 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
 
     @Override
     public void onSurfaceChanged(CameraViewInterface view, Surface surface, int width, int height) {
-
+        Log.e(TAG, "onSurfaceChanged()");
     }
 
     @Override
     public void onSurfaceDestroy(CameraViewInterface view, Surface surface) {
+        Log.e(TAG, "onSurfaceDestroy()");
         if (isPreview && mCameraHelper.isCameraOpened()) {
             mCameraHelper.stopPreview();
             isPreview = false;

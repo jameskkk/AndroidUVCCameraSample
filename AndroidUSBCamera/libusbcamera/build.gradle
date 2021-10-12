@@ -1,18 +1,20 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.jiangdongguo'
+group='com.github.jameskkk'
 
 android {
     compileSdkVersion rootProject.ext.versionCompiler
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.versionTarget
-        versionCode 2
+        versionCode 3
         versionName rootProject.ext.versionNameString
 
         // "armeabi-v7a" can adapter most of the devices
         ndk {
+            //moduleName "UVCCamera"
             abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+            //abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64", "armeabi", "mips"
         }
     }
     buildTypes {
@@ -21,13 +23,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    externalNativeBuild {
+//        ndkBuild {
+//            path 'src/main/jni/Android.mk'
+//        }
+//    }
+
     // solving com.android.tools.r8.CompilationFailedException: Compilation failed to complete
     compileOptions {
         sourceCompatibility rootProject.ext.javaSourceCompatibility
         targetCompatibility rootProject.ext.javaTargetCompatibility
     }
 }
-
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -36,3 +43,20 @@ dependencies {
     implementation "androidx.appcompat:appcompat:${androidXVersion}"
     api "com.serenegiant:common:${commonLibVersion}"
 }
+
+//tasks.withType(JavaCompile) {
+//    compileTask -> compileTask.dependsOn ndkBuild
+//}
+//
+//task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
+//    println('executing ndkBuild')
+//    def ndkBuildingDir = android.ndkDirectory
+//    def ndkBuildingPath = ndkBuildingDir
+//    if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+//        ndkBuildingPath = "$ndkBuildingDir\\ndk-build.cmd"
+//    } else {
+//        ndkBuildingPath = "$ndkBuildingDir/ndk-build"
+//    }
+//    println("NDKBuildingPath: $ndkBuildingPath")
+//    commandLine ndkBuildingPath, '-j8', '-C', file('src/main').absolutePath, 'NDK_LIBS_OUT=jniLibs', 'NDK_OUT=obj'
+//}
