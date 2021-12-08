@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AndroidOpenCVwithUVC.iml" filepath="$PROJECT_DIR$/.idea/AndroidOpenCVwithUVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidOpenCVwithUVC.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidOpenCVwithUVC.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/libuvccamera-release/AndroidOpenCVwithUVC.libuvccamera-release.iml" filepath="$PROJECT_DIR$/.idea/modules/libuvccamera-release/AndroidOpenCVwithUVC.libuvccamera-release.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/opencv/AndroidOpenCVwithUVC.opencv.iml" filepath="$PROJECT_DIR$/.idea/modules/opencv/AndroidOpenCVwithUVC.opencv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/usbCameraCommon-release/AndroidOpenCVwithUVC.usbCameraCommon-release.iml" filepath="$PROJECT_DIR$/.idea/modules/usbCameraCommon-release/AndroidOpenCVwithUVC.usbCameraCommon-release.iml" />
+    </modules>
+  </component>
+</project>
