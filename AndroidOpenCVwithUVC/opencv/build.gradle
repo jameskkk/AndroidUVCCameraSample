@@ -72,8 +72,9 @@ String getNdkBuildPath() {
 
 task ndkBuild(type: Exec, description: 'Compile JNI source via NDK') {
 	println('executing ndkBuild')
-//	commandLine getNdkBuildPath(), '-j4', '-C', file('src/main').absolutePath
-	commandLine getNdkBuildPath(), '-j8', '-C', file('src/main').absolutePath, 'NDK_LIBS_OUT=jniLibs', 'NDK_OUT=obj'
+	def ndkBuildPath = getNdkBuildPath();
+//	commandLine ndkBuildPath '-j4', '-C', file('src/main').absolutePath
+	commandLine ndkBuildPath, '-j8', '-C', file('src/main').absolutePath, 'NDK_LIBS_OUT=jniLibs', 'NDK_OUT=obj'
 }
 
 task ndkClean(type: Exec, description: 'clean JNI libraries') {

@@ -93,7 +93,7 @@ public final class MainActivity extends BaseActivity
      * {@link UVCCamera#setPreviewSize(int, int, int)} throw exception
      * 0:YUYV, other:MJPEG
      */
-    private static final int PREVIEW_MODE = 1;
+    private static final int PREVIEW_MODE = 0;
 
 	protected static final int SETTINGS_HIDE_DELAY_MS = 2500;
 
@@ -319,7 +319,8 @@ public final class MainActivity extends BaseActivity
 						mCameraHandler.addSurface(mPreviewSurfaceId, surface, false);
 					}
 					mCaptureButton.setVisibility(View.VISIBLE);
-					startImageProcessor(PREVIEW_WIDTH, PREVIEW_HEIGHT);
+					mResultView.setVisibility(View.GONE); //[John] Invisible the image process view
+					startImageProcessor(PREVIEW_WIDTH, PREVIEW_HEIGHT); //[John] Start image processor
 				} catch (final Exception e) {
 					Log.w(TAG, e);
 				}
@@ -671,6 +672,7 @@ public final class MainActivity extends BaseActivity
 			
 			width = processing_width;
 			height = processing_height;
+			Log.i(TAG, "MyImageProcessorCallback width: " + width + ", height: " + height);
 		}
 
 		@Override
